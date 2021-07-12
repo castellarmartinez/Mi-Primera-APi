@@ -16,7 +16,9 @@ function comprobarProducto(producto){
     const {nombre, precio} = producto;
     const parametrosValidos = nombre && precio;
     const precioMayorQueCero = precio > 0;
-    const esValido = numeroDeParametros === 2 && parametrosValidos && precioMayorQueCero;
+    const nombreExiste = obtenerProductos().some((element) => element.nombre === nombre)
+    const esValido = numeroDeParametros === 2 && parametrosValidos && precioMayorQueCero
+    && !nombreExiste;
 
     return esValido;
 }
