@@ -40,5 +40,5 @@ const obtenerEsteUsuario = (user) => {
     return usuarioRequerido;  
 }
 
-module.exports = {obtenerUsuarios, mostrarUsuarios, agregarUsuarios, eliminarUsuarios,
-     obtenerEsteUsuario};
+module.exports = {obtenerUsuarios, mostrarUsuarios, agregarUsuarios, eliminarUsuarios, 
+    obtenerEsteUsuario};

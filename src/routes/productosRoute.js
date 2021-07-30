@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const {obtenerProductos, agregarProductos, modificarProductos, eliminarProductos,
-     obtenerEsteProducto} = require('../models/productos')
+    obtenerEsteProducto} = require('../models/productos')
 const {autenticacionAdmin} = require('../middlewares/autenticacion');
 const { productoExiste, idValido, productoValido } = require('../middlewares/comprobacionProductos');
 

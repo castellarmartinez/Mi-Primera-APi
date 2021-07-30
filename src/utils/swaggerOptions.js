@@ -2,7 +2,7 @@ const swaggerOptions = {
     definition: {
         openapi: "3.0.0",
         info:{
-            title: "My APP",
+            title: "Mi Primera API",
             version: "1.0.0",
             description: "Primer proyecto del bootcamp Backend de Acámica."
         },

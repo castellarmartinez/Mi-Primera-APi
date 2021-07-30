@@ -105,7 +105,7 @@ const obtenerEstePedido = (user) => {
     const pedidos = obtenerPedidosUsuario(user);
     const pedidoEditable = pedidos.filter((element) => (element.estado === 'nuevo'));
 
-    return pedidoEditable[0]; //Para que retorne un JSON
+    return pedidoEditable[0]; //Para retornar un JSON
 }
 
 const ordenarPedidos = () => {

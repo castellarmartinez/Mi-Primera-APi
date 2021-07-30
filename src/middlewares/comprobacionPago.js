@@ -1,6 +1,6 @@
 const { obtenerMediosDePago } = require("../models/mediosPago");
 
-// Funciones para la creación de los middlewares
+// Funciones usadas para la creación de los middlewares
 
 function formatoNuevo(medioIngresado){
     const numeroDeParametros = Object.keys(medioIngresado).length;

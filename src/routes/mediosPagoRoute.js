@@ -1,9 +1,10 @@
 const express = require('express');
-const router = express.Router();
 const {obtenerMediosDePago, agregarMediosDePago, modificarMediosDePago, eliminarMediosDePago} = 
 require('../models/mediosPago')
 const {autenticacionAdmin, autenticacionUsuario} = require('../middlewares/autenticacion');
 const { medioValido, modificarValido, eliminarValido } = require('../middlewares/comprobacionPago');
+
+const router = express.Router();
 
 /**
  * @swagger
@@ -155,7 +156,7 @@ router.delete('/eliminar/:id/', autenticacionAdmin, eliminarValido, (req, res) =
  *              medio:
  *                  type: string
  *          example:
- *              medio: Tarjeta de crédito
+ *              medio: Tarjeta de débito
  */
 
 module.exports = router;

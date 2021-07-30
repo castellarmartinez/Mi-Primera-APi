@@ -36,12 +36,12 @@ const listaProductos =
         id : 'DR007'
     }, 
     {
-        nombre : 'Pola',
+        nombre : 'Gutifarra',
         precio : 2500,
         id : 'DR008'
     }, 
     {
-        nombre : 'Carimañola',
+        nombre : 'Patacón',
         precio : 1500,
         id : 'DR009'
     }, 

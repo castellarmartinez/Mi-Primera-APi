@@ -4,7 +4,7 @@ const listaMediosDePago = [
         opcion: 1
     },
     {
-        medio: 'Tarjeta de débito',
+        medio: 'PSE',
         opcion: 2
     },    
     {

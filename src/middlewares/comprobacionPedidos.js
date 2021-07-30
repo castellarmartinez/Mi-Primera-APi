@@ -2,7 +2,7 @@ const { obtenerEsteMedio } = require('../models/mediosPago');
 const {obtenerPedidos, obtenerEstePedido} = require('../models/pedidos');
 const { obtenerEsteProducto } = require('../models/productos');
 
-// Funciones para crear los middlewares
+// Funciones usadas para crear los middlewares
 
 function pedidoAbierto(usuario){
     const abierto = obtenerPedidos().some((element) => 

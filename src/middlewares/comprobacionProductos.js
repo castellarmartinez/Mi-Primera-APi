@@ -1,6 +1,6 @@
 const { obtenerEsteProducto, obtenerProductos } = require("../models/productos")
 
-// Funciones para la creación de los middlewares
+// Funciones usadas para la creación de los middlewares
 
 function comprobarID(idIngresado){
     const indicativoDR = idIngresado.slice(0, 2);

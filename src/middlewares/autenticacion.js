@@ -1,7 +1,7 @@
 const basicAuth = require('express-basic-auth');
 const {obtenerUsuarios} = require('../models/usuarios');
 
-// Funciones para la creación de los middlewares
+// Funciones usadas para la creación de los middlewares
 
 function admin(usuario, contrasena){
     const administrador = obtenerUsuarios().some((element) => 

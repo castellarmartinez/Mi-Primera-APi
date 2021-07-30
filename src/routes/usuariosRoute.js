@@ -1,8 +1,9 @@
 const express = require('express');
-const router = express.Router();
 const {mostrarUsuarios, agregarUsuarios} = require('../models/usuarios')
 const {autenticacionAdmin, intentoDeIngreso} = require('../middlewares/autenticacion');
 const { usuarioRegistrado, usuarioValido } = require('../middlewares/comporbacionUsuarios');
+
+const router = express.Router();
 
 /**
  * @swagger

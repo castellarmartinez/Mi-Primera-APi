@@ -1,5 +1,4 @@
 const express = require('express');
-const router = express.Router();
 const { obtenerPedidos, generarPedido, agregarPedidos, obtenerEstePedido, modificarEstadoAdmin,
     modificarEstadoCliente, obtenerPedidosUsuario, agregarProducto, quitarProducto, 
     modificarPago, modificarDireccion} = require('../models/pedidos');
@@ -12,6 +11,8 @@ const { tienePedidoAbierto, hizoPedidos,
     ordenExiste, estadoValidoAdmin, estadoValidoCliente } = require('../middlewares/comprobacionPedidos');
 const { productoExiste } = require('../middlewares/comprobacionProductos');
 const { cambiarValido } = require('../middlewares/comprobacionPago') 
+
+const router = express.Router();
 
 /**
  * @swagger
@@ -239,6 +240,39 @@ router.put('/cambiardireccion', autenticacionCliente, puedeEditarPedido, direcci
 
 /**
  * @swagger
+ * /pedidos/modificarestado/cliente:
+ *  put:
+ *      tags: [Pedidos]
+ *      summary: Cambiar los estados de los pedidos siendo cliente. 
+ *      description: Permite a los clientes cambiar el estado de sus pedidos.
+ *      parameters:
+ *      -   name: "estado"
+ *          in: "query"
+ *          required: true
+ *          type: "array"
+ *          items:
+ *          schema:
+ *              type: "string"
+ *              enum:
+ *              -   "confirmado"
+ *              -   "cancelado"        
+ *      responses:
+ *          200:
+ *              description: Operación exitosa.
+ *          401:
+ *              description: Se necesita permiso para realizar esa accion.
+ */
+
+ router.put('/modificarestado/cliente', autenticacionCliente, puedeEditarPedido, estadoValidoCliente, (req, res) => {
+    const {estado} = req.query;
+    const {user} = req.auth;
+    modificarEstadoCliente(user, estado);
+
+    res.send('El estado del pedido se modificó exitosamente.')
+})
+
+/**
+ * @swagger
  * /pedidos/modificarestado/admin:
  *  put:
  *      tags: [Pedidos]
@@ -271,39 +305,6 @@ router.put('/cambiardireccion', autenticacionCliente, puedeEditarPedido, direcci
 router.put('/modificarestado/admin', autenticacionAdmin, ordenExiste, estadoValidoAdmin, (req, res) => {
     const {ordenId, estado} = req.query;
     modificarEstadoAdmin(ordenId, estado);
-
-    res.send('El estado del pedido se modificó exitosamente.')
-})
-
-/**
- * @swagger
- * /pedidos/modificarestado/cliente:
- *  put:
- *      tags: [Pedidos]
- *      summary: Cambiar los estados de los pedidos siendo cliente. 
- *      description: Permite a los clientes cambiar el estado de sus pedidos.
- *      parameters:
- *      -   name: "estado"
- *          in: "query"
- *          required: true
- *          type: "array"
- *          items:
- *          schema:
- *              type: "string"
- *              enum:
- *              -   "confirmado"
- *              -   "cancelado"        
- *      responses:
- *          200:
- *              description: Operación exitosa.
- *          401:
- *              description: Se necesita permiso para realizar esa accion.
- */
-
-router.put('/modificarestado/cliente', autenticacionCliente, puedeEditarPedido, estadoValidoCliente, (req, res) => {
-    const {estado} = req.query;
-    const {user} = req.auth;
-    modificarEstadoCliente(user, estado);
 
     res.send('El estado del pedido se modificó exitosamente.')
 })

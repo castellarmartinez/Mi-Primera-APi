@@ -1,6 +1,6 @@
 const { obtenerUsuarios } = require("../models/usuarios");
 
-// Funciones para crear los middlewares
+// Funciones usadas para crear los middlewares
 
 function esNombre(nombre){
     const re = /^[ a-zA-Z]+$/;

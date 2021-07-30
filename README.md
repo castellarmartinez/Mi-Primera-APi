@@ -4,6 +4,10 @@
 
 Es una API que recrea el Backend de la página web de un restaurante. En ella se pueden registrar usuarios para realizar pedidos de los productos que oferta tienda.
 
+## ¿Qué tecnologías implementa esta API?
+
+Esta API está escrita en el lenguaje de programación JavaScript, utilizando el framework de Node JS y las librerías de Express y Swagger para la implementación de los Endpoints y la documentación, respectivamente.
+
 ## Instalación 🔧
 
 ### 0. Pre-requisitos
@@ -56,7 +60,7 @@ Para el registro de nuevos usuarios se ingresa un JSON al _body_ con los datos d
 
 Al procesar la solicitud se crea un usuario sin privilegios de administrador.
 
-##### Nota 1.
+##### Nota 1. 📌
 
 Es importante resaltar que el usuario no se podrá registrar si el JSON no posee las propiedades o posee propiedades adicionales a listadas anteriormente.
 
@@ -68,7 +72,7 @@ En esta ruta se pueden ver todos los productos actualmente disponibles en la tie
 
 En esta ruta se puede comprobar si un producto existe en la tienda, y en caso tal, ver la información del mismo. En el apartado _path_ se debe ingresar el id del producto.
 
-##### Nota 2.
+##### Nota 2. 📌
 
 Los id de todos los productos deben contener las iniciales en mayúsculas DR (Delilah Restó), seguidos por una secuencia numérica (ejemplo: DR0090).
 
@@ -107,7 +111,7 @@ En esta ruta los clientes pueden hacer nuevos pedidos. Se debe ingresar en el _p
 
 Donde el número correspondiente al pago hace referencia a la opción de pago, que a su vez hace referencia al nombre asociado al medio de pago (ejemplo: "pago": 2 --> "opcion": 2 --> "Tarjeta de crédito").
 
-##### Nota 3.
+##### Nota 3. 📌
 
 No se procesará el pedido si el JSON no posee las propiedades o posee propiedades adicionales a listadas anteriormente, y/o el estado es diferente a "nuevo" (abierto) o "confirmado".
 
@@ -159,7 +163,7 @@ La ruta permite la adición de nuevos productos a la tienda. En el _path_ se deb
 }
 ```
 
-##### Nota 4.
+##### Nota 4. 📌
 
 Refiérase a la **_Nota 1._**
 
@@ -181,7 +185,7 @@ La ruta permite la adición de nuevos medios de pago a la tienda. En el _body_ s
 }
 ```
 
-##### Nota 5.
+##### Nota 5. 📌
 
 Refiérase a la **_Nota 1._**
 
