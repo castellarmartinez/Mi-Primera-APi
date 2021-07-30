@@ -2,13 +2,13 @@
 
 ## ¿Qué es **_Mi primera API_**?
 
-Es una API que recrea el Backend de la página web de un restaurante. En ella se pueden registrar usuarios para realizar pedidos de los productos que se encuentran en la tienda.
+Es una API que recrea el Backend de la página web de un restaurante. En ella se pueden registrar usuarios para realizar pedidos de los productos que oferta tienda.
 
-## ¿Qué tecnologías implementa esta API?
+## Instalación 🔧
 
-Esta API está escrita en el lenguaje de programación JavaScript, utilizando el framework de Node JS y las librerías de Express y Swagger para la implementación de los Endpoints y la documentación, respectivamente.
+### 0. Pre-requisitos
 
-## Instalación
+Para poder correr la aplicación es necesario tener instalado en el equipo Node.js, en versión su versión 14 o superior.
 
 ### 1. Clona el proyecto: 
 
@@ -22,7 +22,7 @@ git clone https://gitlab.com/castellarmartinez/mi-primera-api
 npm install
 ```
 
-## Uso
+## Uso 🚀
 
 ### 1. Iniciar el servidor: 
 
@@ -34,7 +34,7 @@ node src/index.js
 
 Acceda a la documentación de Swagger desde este [enlace](http://localhost:3000/api-docs/).
 
-## Rutas habilitadas en la API
+## Rutas habilitadas en la API 📦
 
 ### Rutas públicas
 
@@ -56,7 +56,9 @@ Para el registro de nuevos usuarios se ingresa un JSON al _body_ con los datos d
 
 Al procesar la solicitud se crea un usuario sin privilegios de administrador.
 
-NOTA: Es importante resaltar que el usuario no se podrá registrar si el JSON no posee las propiedades o posee propiedades adicionales a listadas anteriormente.
+##### Nota 1.
+
+Es importante resaltar que el usuario no se podrá registrar si el JSON no posee las propiedades o posee propiedades adicionales a listadas anteriormente.
 
 #### 2. [Ver productos](http://localhost:3000/api-docs/#/Productos/get_productos_lista):
 
@@ -66,7 +68,7 @@ En esta ruta se pueden ver todos los productos actualmente disponibles en la tie
 
 En esta ruta se puede comprobar si un producto existe en la tienda, y en caso tal, ver la información del mismo. En el apartado _path_ se debe ingresar el id del producto.
 
-##### 3.1 Id de los productos
+##### Nota 2.
 
 Los id de todos los productos deben contener las iniciales en mayúsculas DR (Delilah Restó), seguidos por una secuencia numérica (ejemplo: DR0090).
 
@@ -105,7 +107,9 @@ En esta ruta los clientes pueden hacer nuevos pedidos. Se debe ingresar en el _p
 
 Donde el número correspondiente al pago hace referencia a la opción de pago, que a su vez hace referencia al nombre asociado al medio de pago (ejemplo: "pago": 2 --> "opcion": 2 --> "Tarjeta de crédito").
 
-NOTA: Es importante resaltar que no se procesará el pedido si el JSON no posee las propiedades o posee propiedades adicionales a listadas anteriormente, y/o el estado es diferente a "nuevo" (abierto) o "confirmado".
+##### Nota 3.
+
+No se procesará el pedido si el JSON no posee las propiedades o posee propiedades adicionales a listadas anteriormente, y/o el estado es diferente a "nuevo" (abierto) o "confirmado".
 
 #### 3. [Agregar producto al pedido](http://localhost:3000/api-docs/#/Pedidos/put_pedidos_agregarproducto__productoId_):
 
@@ -155,7 +159,9 @@ La ruta permite la adición de nuevos productos a la tienda. En el _path_ se deb
 }
 ```
 
-NOTA: Es importante resaltar que no se agregará el nuevo producto si el JSON no posee las propiedades o posee propiedades adicionales a listadas anteriormente.
+##### Nota 4.
+
+Refiérase a la **_Nota 1._**
 
 #### 3. [Modificar un producto](http://localhost:3000/api-docs/#/Productos/put_productos_modificar__productoId_):
 
@@ -175,7 +181,9 @@ La ruta permite la adición de nuevos medios de pago a la tienda. En el _body_ s
 }
 ```
 
-NOTA: Es importante resaltar que no se agregará el nuevo medio de pago si el JSON no posee las propiedades o posee propiedades adicionales a listadas anteriormente.
+##### Nota 5.
+
+Refiérase a la **_Nota 1._**
 
 #### 6. [Modificar un medio de pago](http://localhost:3000/api-docs/#/Medios%20de%20pago/post_mediosdepago_agregar):
 
@@ -192,3 +200,14 @@ Esta ruta permite ver la lista de pedidos que se han hecho en la tienda.
 #### 9. [Cambiar el estado del pedido](http://localhost:3000/api-docs/#/Pedidos/put_pedidos_modificarestado_admin):
 
 Esta ruta se puede cambiar el estado del producto. En el _path_ se debe ingresar el id que referencia la orden del pedido (ejemplo #23) cuyo estado se desea modificar. En el _query_ se debe seleccionar las opciones disponibles (preparando, enviando, cancelado, entregado).
+
+## Construido con 🛠️
+
+- [Node.js](https://nodejs.org/es/docs/) - Entorno de programación
+- [Express](https://maven.apache.org/) - Framework de Javascript
+- [Swagger](https://swagger.io/docs/) - Documentación
+
+## Autores ✒️
+
+**David Castellar Martínez** [[GitHub](https://github.com/castellarmartinez/)]
+[[LinkedIn](https://www.linkedin.com/in/castellarmartinez/)]

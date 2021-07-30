@@ -29,40 +29,6 @@ router.get('/lista', (req, res) => {
 
 /**
  * @swagger
- * /productos/verproducto/{productoId}:
- *  get:
- *      tags: [Productos]
- *      summary: Obtener un producto específico de la tienda.
- *      description: Devuelve los detalles de un producto.
- *      parameters:
- *      -   name: "productoId"
- *          in: "path"
- *          required: true
- *          type: "string"
- *      responses:
- *          200:
- *              description: Operación exitosa.
- *              content:
- *                  application/json:
- *                      schema:
- *                          type: array
- *                          items:
- *                              $ref: '#/components/schemas/lista productos'
- *          400:
- *              description: El producto que solicita no existe.
- *          401:
- *              description: Se necesita permiso para realizar esa accion
- */
-
-router.get('/verproducto/:id/', productoExiste, (req, res) => {
-    const id = req.params.id;
-    const producto = obtenerEsteProducto(id);
-
-    res.json(producto);
-})
-
-/**
- * @swagger
  * /productos/agregar/{productoId}:
  *  post:
  *      tags: [Productos]
