@@ -13,7 +13,7 @@ Para poder correr la aplicación es necesario tener instalado en el equipo Node.
 ### 1. Clona el proyecto: 
 
 ```bash
-git clone https://gitlab.com/castellarmartinez/mi-primera-api
+git clone https://github.com/castellarmartinez/Mi-Primera-APi.git
 ```
 
 ### 2. Instalar dependencias: 
